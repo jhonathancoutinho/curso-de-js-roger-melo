@@ -7,6 +7,15 @@
   - Exiba o resultado no console, sem inserir um console.log() dentro da função.
 */
 
+// function calculate (number1 = 0, number2 = 0) {
+//   return number1 * number2
+// }
+
+// const resultCalculate = calculate(2, 2)
+
+// console.log(resultCalculate)
+
+
 /*
   02
 
@@ -14,6 +23,14 @@
     **function expression** que retorne o resultado da **divisão** entre esses  
     2 números.
 */
+
+// const division = function (number01 = 0,  number02 = 0) {
+//         return number01 / number02
+//  }
+
+//  const resultDivision = division(8, 4)
+
+// console.log(resultDivision)
 
 /*
   03
@@ -27,6 +44,14 @@
 
   "Esta é a Xª vez que essa string é exibida."
 */
+// function valueReceived (number1 = 0) {
+//   for (let i = 0; i <= number1; i++){
+//     console.log(`Esta é a ${i}ª vez que essa string é exibida.`)
+//   }
+// }
+
+//  valueReceived(7)
+
 
 /*
   04
@@ -41,6 +66,18 @@
 
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
 
+
+// function newArray (millennialWords) {
+//   let newMillenniaWords = []
+//   for (let i = 0; i < millennialWords.length; i++) {
+//     newMillenniaWords.push(millennialWords[i].toUpperCase())
+//   }
+//   return newMillenniaWords
+// }
+
+// const result = newArray(millennialWords)
+
+// console.log(result)
 /*
   05
 
@@ -53,6 +90,24 @@ const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influenc
 */
 
 const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
+
+
+
+// function positiveNumber (randomNumbers) {
+//   let countPositive = []
+
+//     for (let i = 0; i < randomNumbers.length; i++) {
+//       if(randomNumbers[i] > 0){
+//         countPositive.push(randomNumbers[i])
+//       } 
+//     }
+//     return countPositive.length
+// }
+// const resultPositive = positiveNumber(randomNumbers)
+
+
+// console.log(`O array "randomNumbers" possui ${randomNumbers.length} números, sendo ${resultPositive} positivos e ${ randomNumbers.length - resultPositive} negativos.`)
+
 
 /*
   06
