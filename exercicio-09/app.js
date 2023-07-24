@@ -121,8 +121,8 @@
     invocação é null.
 */
 
-// const emptyValue = (valor = null) => {
-//   return valor
+// const emptyValue = (valor) => {
+//   return valor === null
 // }
 
 // console.log(emptyValue())
@@ -139,14 +139,16 @@
 */
 
 
-// const subFunction = (aFunction) => {
-//     return aFunction() 
+// const subFunction = callback => {
+//     callback()
 // }
 
-// subFunction(()=>'Jhonathan')
+// const logName = () => {
+//   console.log('Jhonathan')
+// }
 
+// subFunction(logName)
 
-// console.log(subFunction(()=>'Jhonathan'))
 // 
 /*
   10
@@ -181,7 +183,7 @@
 // const numbers = [1, 2, 3]
 
 // numbers.forEach(( numbers, index, array) => {
-//   console.log(`O ${index}º item do array ${array.join(', ')} é ${numbers}.`)
+//   console.log(`O ${index + 1 }º item do array [${array.join(', ')}] é ${numbers}.`)
 // })
 
 /*
@@ -264,22 +266,18 @@ const review = [
 // let likes = ['Rafael', 'Leticia', 'Allan', 'Viviane', 'Beatriz', 'Jhonathan']
 
 // const whoLiked = (array = [])=> {
-//   let msnLike = ''
+  
 //   switch(array.length) {
 //     case 0:
-//       return msnLike += `Ninguém curtiu isso.`
-//       break
+//       return `Ninguém curtiu isso.`
 //     case 1:
-//       return msnLike += `${likes[0]} curtiu isso.`
-//       break
+//       return `${likes[0]} curtiu isso.`
 //     case 2:
-//       return msnLike += `${likes[0]} e ${likes[1]} curtiram isso.`
-//       break
+//       return `${likes[0]} e ${likes[1]} curtiram isso.`
 //     case 3:
-//       return msnLike += `${likes[0]}, ${likes[1]} e ${likes[2]} curtiram isso.`
-//       break 
+//       return `${likes[0]}, ${likes[1]} e ${likes[2]} curtiram isso.` 
 //     default:
-//       return msnLike += `${likes[0]}, ${likes[1]} e ${likes.length - 2} curtiram isso.`
+//       return `${likes[0]}, ${likes[1]} e ${likes.length - 2} curtiram isso.`
 //   }
 // }
 
