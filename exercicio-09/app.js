@@ -13,9 +13,15 @@
     valor no console.
 */
 
-function convertToString (value) {
-  return String(value)
-}
+
+
+// const convertToString = (string) => {
+//   return string
+// }
+
+// console.log(convertToString('Oi'))
+
+
 
 /*
   02
@@ -23,6 +29,12 @@ function convertToString (value) {
   - Crie uma função que retorne a quantidade de caracteres que uma string  
     recebida por parâmetro possui.
 */
+
+// const characterCount = (string) => {
+//   return string.length
+// }
+
+// console.log(characterCount('Teste'))
 
 /*
   03
@@ -34,12 +46,25 @@ function convertToString (value) {
   "CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO"
 */
 
+// const transformToLowerCase = (string) => {
+//   return string.toLowerCase()
+// }
+
+// console.log(transformToLowerCase('CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO'))
+
+
 /*
   04
 
   - Crie uma função que recebe 2 parâmetros: um caractere e uma string;
   - Ao ser invocada, a função deve retornar o index do caractere na string.
 */
+
+// const searchIndex = (char, string) => {
+//     return string.indexOf(char)
+// }
+
+// console.log(searchIndex('s', 'teste'))
 
 /*
   05
@@ -48,6 +73,14 @@ function convertToString (value) {
     passado por argumento existe no array (também passado por argumento).
 */
 
+// let Array = [12, 15, true, 'oi', 14]
+
+// const trueOrFalse = (array = [], boolean) => {
+//   return array.includes(boolean)
+// }
+
+// console.log(trueOrFalse(Array, true))
+
 /*
   06
 
@@ -55,12 +88,31 @@ function convertToString (value) {
     argumentos em sua invocação;
 */
 
+// let arrayTeste01 = ['Olá', 'esse', 'é', 'um', 'teste']
+// let arrayTeste02 = ['para', 'concatenar', 'os Arrays', 'através', 'de', 'arrow function']
+
+// const concatenate = (array1 = [], array2 = []) => {
+//     return array1.concat(array2)
+// }
+
+// console.log(concatenate(arrayTeste01, arrayTeste02))
+
 /*
   07
 
   - Crie uma função que retorna o array passado como argumento em sua invocação,  
     mas com o último item removido.
 */
+// let superHeroes = ['wolverine', 'Hulk', 'Batman', 'Super-man', 'Spider-man']
+
+// const itemRemoval = (array = [] ) => {
+//     array.pop()
+//     return array
+// }
+
+// console.log(itemRemoval(superHeroes))
+
+
 
 /*
   08
@@ -68,6 +120,12 @@ function convertToString (value) {
   - Crie uma função que retorna se o valor passado como argumento em sua  
     invocação é null.
 */
+
+// const emptyValue = (valor = null) => {
+//   return valor
+// }
+
+// console.log(emptyValue())
 
 /*
   09
@@ -80,6 +138,16 @@ function convertToString (value) {
     foi exibido.
 */
 
+
+// const subFunction = (aFunction) => {
+//     return aFunction() 
+// }
+
+// subFunction(()=>'Jhonathan')
+
+
+// console.log(subFunction(()=>'Jhonathan'))
+// 
 /*
   10
 
@@ -91,6 +159,16 @@ function convertToString (value) {
     resulte no triplo de 33.
 */
 
+// const tripleValue = (value) => {
+//   return aFunction(value)
+// }
+
+// const aFunction = (value) => {
+//   return value * 3
+// }
+
+// console.log(tripleValue(10))
+
 /*
   11
 
@@ -100,7 +178,11 @@ function convertToString (value) {
   "O Xº item do array [X, X, X] é X."
 */
 
-const numbers = [1, 2, 3]
+// const numbers = [1, 2, 3]
+
+// numbers.forEach(( numbers, index, array) => {
+//   console.log(`O ${index}º item do array ${array.join(', ')} é ${numbers}.`)
+// })
 
 /*
   12
@@ -110,12 +192,18 @@ const numbers = [1, 2, 3]
     criada.
 */
 
-const letters = ['v', 'e', 'p']
-let lettersCopy = []
+// const letters = ['v', 'e', 'p']
+// let lettersCopy = []
 
-for (let i = 0; i < letters.length; i++) {
-  lettersCopy.push(letters[i])
-}
+// // for (let i = 0; i < letters.length; i++) {
+// //   lettersCopy.push(letters[i])
+// // }
+
+// letters.forEach((letters)=>{
+//     lettersCopy.push(letters)
+// })
+
+// console.log(lettersCopy)
 
 /*
   13
@@ -144,9 +232,13 @@ const review = [
   'Recomendo esse livro pra quem curte uma boa história de ficção. Apesar de muita gente pensar que o livro não tem graça, porque o legal mesmo é ver o dinossauro no filme, com todos os efeitos especiais, eu digo pra deixar esse pensamento de lado, pois a história é tão bem contada e os detalhes são tão bem relatados, que você passa a fazer parte da história, e vive todas as emoções hahaha.'
 ]
 
-let paragraphs = ''
+// let paragraphs = ''
 
-section.innerHTML = paragraphs
+// review.forEach(reviewFunc =>{
+//     paragraphs += `<p>${reviewFunc}</p>`
+// })
+
+// section.innerHTML = paragraphs
 
 /*
   14
@@ -168,3 +260,27 @@ section.innerHTML = paragraphs
     pelo restante da quantidade de pessoas que curtiram o post (além das duas  
     pessoas já mencionadas no início da mensagem).
 */
+
+// let likes = ['Rafael', 'Leticia', 'Allan', 'Viviane', 'Beatriz', 'Jhonathan']
+
+// const whoLiked = (array = [])=> {
+//   let msnLike = ''
+//   switch(array.length) {
+//     case 0:
+//       return msnLike += `Ninguém curtiu isso.`
+//       break
+//     case 1:
+//       return msnLike += `${likes[0]} curtiu isso.`
+//       break
+//     case 2:
+//       return msnLike += `${likes[0]} e ${likes[1]} curtiram isso.`
+//       break
+//     case 3:
+//       return msnLike += `${likes[0]}, ${likes[1]} e ${likes[2]} curtiram isso.`
+//       break 
+//     default:
+//       return msnLike += `${likes[0]}, ${likes[1]} e ${likes.length - 2} curtiram isso.`
+//   }
+// }
+
+// console.log(whoLiked(likes))
