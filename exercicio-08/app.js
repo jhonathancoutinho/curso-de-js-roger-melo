@@ -45,8 +45,10 @@
   "Esta é a Xª vez que essa string é exibida."
 */
 // function valueReceived (number1 = 0) {
-//   for (let i = 0; i <= number1; i++){
-//     console.log(`Esta é a ${i}ª vez que essa string é exibida.`)
+  
+//   for (let i = 0; i < number1; i++){
+//     let counter = i + 1
+//     console.log(`Esta é a ${counter}ª vez que essa string é exibida.`)
 //   }
 // }
 
@@ -119,7 +121,22 @@ const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
     função.
 */
 
-// getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42])
+// const oddNumbers = [83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42]
+// let newOddNumbers = []
+
+// function getOddNumbers(oddNumbers){
+
+// for (let i = 0; i < oddNumbers.length; i++){
+//     if(oddNumbers[i] % 2 !== 0){
+//       newOddNumbers.push(oddNumbers[i])
+//     }
+//   }
+//   return newOddNumbers
+// }
+
+// getOddNumbers(oddNumbers)
+
+// console.log(newOddNumbers)
 
 /*
   07
@@ -157,3 +174,17 @@ const functions = [
   function () { return 'Índias' },
   function () { return 'Ocidentais.' }
 ]
+
+// let frase = []
+
+
+// function newFrase (functions){
+// for ( let i = 0; i < functions.length; i++){
+//     frase.push(functions[i]())
+//   }
+//   return frase
+// }
+
+// newFrase(functions)
+
+// console.log(frase.join(' '))
