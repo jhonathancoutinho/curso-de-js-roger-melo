@@ -5,6 +5,13 @@
     maiúsculas.
 */
 
+const h1 = document.querySelector('body > h1')
+
+const alterationText = ( text =>{
+  h1.textContent = text.toUpperCase()
+})
+
+alterationText(h1.textContent)
 
 
 /*
@@ -16,6 +23,14 @@
 
 const numbers = [ 53, 24, 3, 8, 1, 6, 57, 80, 77, 98, 55 ]
 
+const list = document.querySelector('.numbers')
+
+numbers.forEach(number =>{
+  list.innerHTML += `<li class="number">${number}</li>`
+})
+
+console.log(list)
+
 /*
   03
 
@@ -24,6 +39,17 @@ const numbers = [ 53, 24, 3, 8, 1, 6, 57, 80, 77, 98, 55 ]
     - Se o número é ímpar, exiba-o na cor "pink".
 */
 
+const listAll = document.querySelectorAll('body > ul > li')
+
+listAll.forEach (li =>{
+  
+  if(li.textContent % 2 === 0){
+    li.setAttribute('style', 'color:lightblue;')
+  }
+  if (li.textContent % 2 !== 0){
+    li.setAttribute('style', 'color:pink;')
+  }
+})
 
 
 /*
@@ -34,7 +60,9 @@ const numbers = [ 53, 24, 3, 8, 1, 6, 57, 80, 77, 98, 55 ]
   P.s: a classe "body-background" já está declarada no style.css.
 */
 
+const addClassBack = document.querySelector('body')
 
+addClassBack.classList.add('body-background')
 
 /*
   05
@@ -44,15 +72,16 @@ const numbers = [ 53, 24, 3, 8, 1, 6, 57, 80, 77, 98, 55 ]
     do link do index.html.
 */
 
+const addLink = document.querySelector('.link')
 
-
+addLink.setAttribute('href', 'https://github.com/roger-melo-treinamentos/curso-de-js-roger-melo')
 /*
   06
 
   - Exiba o novo valor do atributo href do link no console.
 */
 
-
+console.log(addLink.getAttribute('href'))
 
 /*
   07
@@ -61,7 +90,7 @@ const numbers = [ 53, 24, 3, 8, 1, 6, 57, 80, 77, 98, 55 ]
     manipuladas via JS no h1.
 */
 
-
+console.log(h1.style)
 
 /*
   08
@@ -69,7 +98,7 @@ const numbers = [ 53, 24, 3, 8, 1, 6, 57, 80, 77, 98, 55 ]
   - Remova a classe "body-background", do elemento body.
 */
 
-
+addClassBack.classList.remove('body-background')
 
 /*
   09
@@ -77,3 +106,5 @@ const numbers = [ 53, 24, 3, 8, 1, 6, 57, 80, 77, 98, 55 ]
   - Se o link da página possuir uma classe "link", remova-a;
   - Não utilize o método remove() para fazer isso.
 */
+
+addLink.classList.toggle('link')
