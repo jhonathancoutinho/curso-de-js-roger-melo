@@ -3,6 +3,7 @@
   vimos até aqui =)
 */
 
+
 /*
   01
 
@@ -21,6 +22,29 @@
   Dica: pesquise pelo método "insertAdjacentElement", no MDN;
 */
 
+const user = document.querySelector('#username')
+const regexTest = username => /^[a-zA-Z]{6,}$/.test(username)
+const p = document.createElement('p')
+
+
+
+user.addEventListener('keyup', event =>{
+ 
+  const username = event.target.value
+  const isAvalided = regexTest(username)
+
+
+  if(!isAvalided) {
+    p.textContent ='O valor deve conter no mínimo 6 caracteres,com apenas letras maiúsculas e/ou minúsculas'
+    p.setAttribute('class', 'username-help-feedback')
+    event.target.insertAdjacentElement('afterend', p)
+    return
+  }
+  p.textContent ='Username válido =)'
+  p.setAttribute('class', 'username-success-feedback ')
+  event.target.insertAdjacentElement('afterend', p)
+})
+
 /*
   02
 
@@ -33,6 +57,21 @@
   - Não insira o parágrafo manualmente no index.html.
 */
 
+const form = document.querySelector('form')
+
+form.addEventListener('submit', event =>{
+  event.preventDefault()
+  const username = event.target.username.value
+  if(regexTest(username)){
+    p.textContent = 'Dados enviados =)'
+    p.setAttribute('class', 'submit-success-feedback')
+    event.target.insertAdjacentElement('beforeend', p)
+    return
+  }
+    p.textContent ='Por favor, insira um username válido'
+    p.setAttribute('class', 'submit-help-feedback')
+    event.target.insertAdjacentElement('beforeend', p)
+})
 /*
   03
 
@@ -50,3 +89,10 @@
         6;
     2) Pesquisar no MDN.
 */
+const arrayTest = [1, 2, 3]
+const functionTestTrue = arrayTest.some(arrayTest => arrayTest > 2)
+const functionTestFalse = arrayTest.some(arrayTest => arrayTest === 0)
+
+
+console.log(functionTestTrue)
+console.log(functionTestFalse)
