@@ -3,6 +3,32 @@
 
   - No envio do form, faça com que a página não seja recarregada.
 */
+const form = document.querySelector('form')
+const p = document.querySelector('p')
+
+const messageOK = 'O valor inserido no input é válido =)'
+const messageNotOk = 'Valor inválido =('
+
+form.addEventListener('submit', event =>{
+  event.preventDefault()
+  const inputValue = event.target.input.value
+  
+  //const password07 = /.{7, }/
+  // const method = password07.test(inputValue)
+  const password0711 = /[a-zA-Z0-9]{7,11}/
+  const method = password0711.test(inputValue)
+
+  if(method){
+    console.log(messageOK)
+  }else{
+    console.log(messageNotOk)
+    
+  }
+})
+
+
+const doc = /documentation/
+console.log(doc.test(p.textContent))
 
 /*
   02
@@ -28,7 +54,8 @@
 */
 
 const B99message = 'E o Terry Crews faz tudo, inclusive tocar a abertura de B99 na flauta'
-
+const B99 = /[A-Z0-9]{3}/
+console.log(B99.test(B99message))
 /*
   05
 
@@ -36,7 +63,7 @@ const B99message = 'E o Terry Crews faz tudo, inclusive tocar a abertura de B99 
     resultado do teste entre a regex e a string exibido no console seja true.
 */
 
-const word = 'O que a NASA fotografou no dia do seu aniversário?'
+const word = 'NASA'
 const NASARegex = /^[A-Z]{4}$/
 const NASAResult = NASARegex.test(word)
 
@@ -54,6 +81,8 @@ console.log(NASAResult)
     - "a[b@X7c" é um valor válido, pois contém 7 caracteres;
     - "jozeti" não é um valor válido, pois contém 6 caracteres.
 */
+
+
 
 /*
   07

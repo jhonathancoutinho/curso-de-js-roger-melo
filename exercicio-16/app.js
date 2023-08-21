@@ -4,20 +4,43 @@
   - Faça com que ao clicar em um dos elementos dentro da div, a mensagem  
     'Clicou na div.' não seja exibida no console.
 */
-
+// bloco const DOM
 const div = document.querySelector('div')
 const elementsInsideDiv = Array.from(div.children)
+const h2 = document.querySelector('h2')
+const egg = document.querySelector('.egg')
+const button = document.querySelector('button')
 
+//bloco eventos no DOM
 elementsInsideDiv.forEach(element => {
-  element.addEventListener('click', () => {
-    console.log('Clicou no filho da div.')
+
+  element.addEventListener('click', event => {
+    const msnText = `Clicou no ${event.target.tagName.toLowerCase()},  filho da div.`
+    event.stopPropagation()
+    h2.textContent = `${msnText}` 
   })
 })
 
 div.addEventListener('click', () => {
-  console.log('Clicou na div.')
+  h2.textContent = 'Clicou na div.'
 })
 
+const copyH2 = ()=> {
+  console.log('Texto copiado')
+}
+
+const cursorLocation = event=>{
+  egg.textContent = `X:${event.offsetX} | Y:${event.offsetY}`
+}
+
+const changeColorEgg = () =>{
+  egg.style.background = 'lightgoldenrodyellow'
+}
+
+
+h2.addEventListener('copy', copyH2)
+egg.addEventListener('mousemove', cursorLocation)
+button.addEventListener('click', changeColorEgg)
 /*
   02
 
@@ -76,3 +99,13 @@ const people = [
   { id: 8, name: 'Matheus Manucci', profession: 'Piloto' },
   { id: 9, name: 'Hamilton Silva', profession: 'Advogado' }
 ]
+
+let wantedValue = 'Front-end developer'
+
+const searchProfession = people.some(({profession}) => profession === wantedValue)
+
+if(searchProfession){
+  console.log('O array people contém, no mínimo, um(a) Front-end developer.')
+} else {
+  console.log('Essa profisão não existe no array')
+}
