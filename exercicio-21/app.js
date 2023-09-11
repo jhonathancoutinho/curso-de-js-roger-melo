@@ -23,6 +23,16 @@ const numbersSmallerThan501 = crazyNumbers.filter(number => number < 501)
 
 console.log(numbersSmallerThan501)
 
+const smallerNumberQtd = crazyNumbers.reduce((accumulator, number)=>{
+  if(number < 501){
+    accumulator += 1
+  }
+
+  return accumulator
+}, 0)
+
+console.log(smallerNumberQtd)
+
 /*
   03
 
