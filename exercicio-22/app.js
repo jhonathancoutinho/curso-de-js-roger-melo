@@ -54,7 +54,7 @@ const newNumbers = numbers
 
 const randomNumbers = [10, 5, 0, 40, 60, 10, 20, 70]
 
-const numbersBigger50 = randomNumbers.filter(number => number > 50)
+const numbersBigger50 = randomNumbers.find(number => number > 50)
 
 
 /*
@@ -83,8 +83,14 @@ const newPeople = people
 
 const ingredients = ['vinho', 'tomate', 'cebola', 'cogumelo']
 
-const preparationIngredients = ingredients.map(ingrediente => `${ingrediente} cozido`)
+const preparationIngredients = ingredients.reduce((acc, item, index, array)=>{
+  const correctWordGender = /a$/.test(item) ? 'cozida' : 'cozido'
 
+  if(index === array.length -1){
+    return acc + `${item} ${correctWordGender}`
+  }
+  return acc + `${item} ${correctWordGender}, `
+}, '')
 
 /*
   07
@@ -93,7 +99,7 @@ const preparationIngredients = ingredients.map(ingrediente => `${ingrediente} co
     assistiram apenas os filmes da Disney.
 */
 
-const topBrazilmovies = [
+const topBrazilMovies = [
   { title: 'Vingadores: Ultimato', peopleAmount: 19686119, distributedBy: 'Disney' },
   { title: 'Titanic', peopleAmount: 17050000, distributedBy: 'Paramount / 20th Century' },
   { title: 'O Rei Leão', peopleAmount: 16267649, distributedBy: 'Disney' },
@@ -106,7 +112,7 @@ const topBrazilmovies = [
   { title: 'Dona Flor e Seus Dois Maridos', peopleAmount: 10735524, distributedBy: 'Embrafilme' }
 ]
 
-const totalPublicDisneyMovies = topBrazilmovies
+const totalPublicDisneyMovies = topBrazilMovies
   .filter( public => public.distributedBy === 'Disney')
   .reduce((accumulator, public)=>{
     return accumulator + public.peopleAmount
@@ -142,13 +148,13 @@ const ageOfDogsInHumanTime = pets
 /*
   09
   
-  - Considerando o array topBrazilmovies, através do map ou do reduce, insira 
+  - Considerando o array topBrazilMovies, através do map ou do reduce, insira 
     os nomes dos filmes na ul do index.html.
 */
 
 const ul = document.querySelector('.list-group') 
 
-const moviesUl = topBrazilmovies.map(movie => {
+const moviesUl = topBrazilMovies.map(movie => {
    const li = document.createElement('li')
    li.textContent = `${movie.title}`
    ul.appendChild(li)
