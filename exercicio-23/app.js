@@ -7,6 +7,8 @@
 
 const myString = '    JS      '
 
+console.log(myString.trim())
+
 /*
   02
 
@@ -23,6 +25,9 @@ const people = [
   { firstName: 'Eric', lastName: 'Silva', score: 82 }
 ]
 
+const newPeople = people
+  .sort((point1, point2)=> point1.score - point2.score)
+  console.log(newPeople)
 /*
   03
 
@@ -35,6 +40,8 @@ const people = [
 
 const animals = ['cão', 'gato', 'boi', 'leão', 'gnu', 'alce', 'ema']
 
+const filterThreeLettersAnimals = animals.filter(ani => ani.length === 3)
+
 /*
   04
 
@@ -42,7 +49,7 @@ const animals = ['cão', 'gato', 'boi', 'leão', 'gnu', 'alce', 'ema']
     nome de cada animal. Ex.: [6, 8, 2].
 */
 
-
+const countLettersAnimals = animals.map(animal => animal.length)
 
 /*
   05
@@ -61,6 +68,10 @@ const friends = [
 ]
 
 
+const friendsInTheSameRegion = friends
+  .map( friend => friend)
+  .filter(home => home.nearMe === true)
+  
 
 /*
   06
@@ -70,6 +81,10 @@ const friends = [
 */
 
 const numbers = [46, 86, 212, 29, 51, 9, 25, 42, 81]
+
+const sumImpNumbers = numbers
+    .filter(num => num = num % 2 === 1)
+    .reduce((acc, num)=> acc += num, 0)
 
 /*
   07
@@ -91,3 +106,7 @@ const data = [{
   country: 'Indonesia',
   population: 263991379
 }]
+
+const sumPopulationExclusedChine = data
+  .filter(pais => pais.country !== 'China')
+  .reduce((acc, pais) => acc += pais.population, 0)
