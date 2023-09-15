@@ -6,8 +6,8 @@
 */
 
 const myString = '    JS      '
-
-console.log(myString.trim())
+const myStringCopy = myString.trim()
+console.log(myStringCopy)
 
 /*
   02
@@ -26,8 +26,17 @@ const people = [
 ]
 
 const newPeople = people
+  .map(person => {
+    return {
+      firstName:person.firstName,
+      lastName:person.lastName,
+      score: person.score
+    }
+      })
   .sort((point1, point2)=> point1.score - point2.score)
+ 
   console.log(newPeople)
+ 
 /*
   03
 
@@ -69,9 +78,8 @@ const friends = [
 
 
 const friendsInTheSameRegion = friends
-  .map( friend => friend)
   .filter(home => home.nearMe === true)
-  
+  .map( friend => friend.name)
 
 /*
   06
@@ -83,7 +91,7 @@ const friendsInTheSameRegion = friends
 const numbers = [46, 86, 212, 29, 51, 9, 25, 42, 81]
 
 const sumImpNumbers = numbers
-    .filter(num => num = num % 2 === 1)
+    .filter(num =>  num % 2 )
     .reduce((acc, num)=> acc += num, 0)
 
 /*
@@ -107,6 +115,6 @@ const data = [{
   population: 263991379
 }]
 
-const sumPopulationExclusedChine = data
+const sumPopulationExclusedChina = data
   .filter(pais => pais.country !== 'China')
   .reduce((acc, pais) => acc += pais.population, 0)
